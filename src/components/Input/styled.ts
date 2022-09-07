@@ -7,7 +7,7 @@ export const InputCustom = styled(TextField)`
     }
 
     input{
-        background-color: #e5e5e5;
+        background-color: #3E3E40;
         border-radius: 6px;
     }
 `;

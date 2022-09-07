@@ -1,32 +1,43 @@
-import { ListItemIcon, MenuItem, MenuList } from '@mui/material';
-import { ListItemTextCustom, Menu } from './styled';
+import { ListItemIcon } from '@mui/material';
+import { ListItemTextCustom, Menu, MenuItemCustom } from './styled';
 import EqualizerIcon from '@mui/icons-material/Equalizer';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+  
 
 export default function SideMenu(){
+	const location = useLocation();
+	
 	return(
 		<>
 			<Menu>
 				
 				<Link to="/">
-					<MenuItem sx={{ pl: '1.5rem', py: 1.7, color: '#FFFFFF' }}>
+					<MenuItemCustom 
+						active={location.pathname === '/'}
+						sx={{ 
+							pl: '1.2rem', py: 1.7, color: '#FFFFFF',
+						}}
+					>
 						<ListItemIcon>
 							<EqualizerIcon sx={{ color: '#FFFFFF' }} />
 						</ListItemIcon>
 
 						<ListItemTextCustom>Dashboard</ListItemTextCustom>
-					</MenuItem>
+					</MenuItemCustom>
 				</Link>
 
 				<Link to="/venda-produtos">
-					<MenuItem sx={{ pl: '1.5rem', py: 1.7, color: '#FFFFFF' }}>
+					<MenuItemCustom 
+						active={location.pathname === '/venda-produtos'}
+						sx={{ pl: '1.2rem', py: 1.7, color: '#FFFFFF' }}
+					>
 						<ListItemIcon>
 							<ShoppingBagIcon sx={{ color: '#FFFFFF' }} />
 						</ListItemIcon>
 
 						<ListItemTextCustom>Venda Produto</ListItemTextCustom>
-					</MenuItem>
+					</MenuItemCustom>
 				</Link>
 				
 			</Menu>

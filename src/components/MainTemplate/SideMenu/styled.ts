@@ -1,4 +1,4 @@
-import { ListItemText } from '@mui/material';
+import { ListItemText, MenuItem } from '@mui/material';
 import styled from 'styled-components';
 
 export const Menu = styled.aside` 
@@ -14,4 +14,14 @@ export const ListItemTextCustom = styled(ListItemText)`
        line-height: 14px;
     }
 
+`;
+
+interface Props {
+    active?: boolean;
+}
+
+export const MenuItemCustom = styled(MenuItem)<Props>` 
+    transition: all .5s ease-out;
+    border-left: 4px solid transparent!important;
+    ${props => props.active && 'border-left: 4px solid #FFFFFF!important'};
 `;

@@ -12,12 +12,12 @@ type Props = {
 	inputRef?: React.Ref<any>,
 	value?: string,
 	onChange?: (event : object) => void,
-	onBlur?: (event: object) => void
-	
+	onBlur?: (event: object) => void,
+	fullWidth?: boolean
 }
 
 export default function Input({
-	sx, type, placeholder, error, autoFocus, id, inputRef, value, onChange, onBlur
+	sx, type, placeholder, error, autoFocus, id, inputRef, value, onChange, onBlur, fullWidth
 }: Props){
 	return(
 		<>
@@ -33,6 +33,7 @@ export default function Input({
 				error={error}
 				autoFocus={autoFocus}
 				onBlur={onBlur}
+				fullWidth={fullWidth}
 			/>
 		</>
 	);

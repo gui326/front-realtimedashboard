@@ -10,7 +10,7 @@ export default function Label({children, htmlFor} : Props){
 				htmlFor={htmlFor}
 				style={{
 					fontSize: 14,
-					color: '#3a3a3a',
+					color: '#b5b5b5',
 					fontWeight: '500',
 					paddingBottom: 2
 				}}
